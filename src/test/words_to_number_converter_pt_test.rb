@@ -9,7 +9,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     return set.last, set.first
   end
 
-  describe "Unities are valid" do
+  describe "To number - Unities are valid" do
     [
       [0, "Zero"],
       [1, "Um"],
@@ -31,7 +31,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Tens are valid" do
+  describe "To number - Tens are valid" do
     [
       [10, "Dez"],
       [11, "Onze"],
@@ -69,7 +69,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Hundred are valid" do
+  describe "To number - Hundred are valid" do
     [
       [100, "Cem" ],
       [101, "Cento e Um" ],
@@ -117,7 +117,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Thousands are valid" do
+  describe "To number - Thousands are valid" do
     [
       [1000, "Mil"],
       [1001, "Mil e Um"],
@@ -138,7 +138,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Millions are valid" do
+  describe "To number - Millions are valid" do
     [
       [1000000, "Um Milhão"],
       [1000001, "Um Milhão e Um"],
@@ -159,7 +159,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Thousand Millions are valid" do
+  describe "To number - Thousand Millions are valid" do
     [
       [1000000000, "Mil Milhões"],
       [1000000001, "Mil Milhões e Um"],
@@ -180,7 +180,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Thousand Millions in short scale (billions) are valid" do
+  describe "To number - Thousand Millions in short scale (billions) are valid" do
     [
       [1000000000, "Um Bilião"],
       [1000000001, "Um Bilião e Um"],
@@ -201,7 +201,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Billions are valid" do
+  describe "To number - Billions are valid" do
     [
       [1000000000000, "Um Bilião"],
       [1000000000001, "Um Bilião e Um"],
@@ -222,7 +222,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Billions in short scale (trillions) are valid" do
+  describe "To number - Billions in short scale (trillions) are valid" do
     [
       [1000000000000, "Um Trilião"],
       [1000000000001, "Um Trilião e Um"],
@@ -243,7 +243,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Random integers are valid" do
+  describe "To number - Random integers are valid" do
     [
       [42, "Quarenta e Dois" ],
       [102, "Cento e Dois" ],
@@ -271,7 +271,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "Random decimals are valid" do
+  describe "To number - Random decimals are valid" do
     [
       [42.2, "Quarenta e Dois vírgula Dois" ],
       [102.0, "Cento e Dois" ],

@@ -25,7 +25,7 @@ module AdaNumbers
         when 1
           return resolve_word word, @@use_short_scale
         when 2
-          count_zeros = words_to_convert.last.split('').select {|w| w == WrittenNumber::Pt::ZERO}.size
+          count_zeros = words_to_convert.last.split(' ').select {|w| w == WrittenNumber::Pt::ZERO}.size
 
           whole_part   = resolve_word words_to_convert.first, @@use_short_scale
           decimal_part = resolve_word words_to_convert.last.gsub(WrittenNumber::Pt::ZERO, ""), @@use_short_scale
@@ -33,9 +33,9 @@ module AdaNumbers
           return Message::INVALID_NUMBER if whole_part == Message::INVALID_NUMBER || decimal_part == Message::INVALID_NUMBER
 
           decimal_part = "#{'0'*count_zeros}#{decimal_part}" if count_zeros > 0
-          number = "#{whole_part}#{decimal_part}"
+          number = "#{whole_part}.#{decimal_part}"
 
-          return number
+          return number.to_f
         end
 
         return Message::INVALID_NUMBER

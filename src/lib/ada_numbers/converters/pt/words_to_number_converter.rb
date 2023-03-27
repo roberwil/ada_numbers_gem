@@ -5,6 +5,7 @@ require_relative '../../utilities/number_category'
 
 require_relative '../../constants/pt/written_numbers'
 require_relative '../../constants/pt/separators'
+require_relative '../../constants/message'
 
 module AdaNumbers
   module WordsToNumberConverter
@@ -60,7 +61,7 @@ module AdaNumbers
         # in the map and then stack it up. If the next number to be stacked requires a multiplier,
         # we find it and stack it up after popping the later numbers. When all the matches are found
         # The number is their sum
-        (1...string_tokens.size).each do |cursor|
+        (0...string_tokens.size).each do |cursor|
           token = string_tokens[cursor]
 
           case token

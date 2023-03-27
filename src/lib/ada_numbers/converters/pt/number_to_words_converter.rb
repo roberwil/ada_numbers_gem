@@ -5,7 +5,7 @@ require_relative '../../utilities/number_category'
 
 require_relative '../../constants/pt/written_numbers'
 require_relative '../../constants/pt/separators'
-
+require_relative '../../constants/message'
 
 module AdaNumbers
   module NumberToWordsConverter

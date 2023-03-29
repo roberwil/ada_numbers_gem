@@ -16,15 +16,15 @@ describe "EN Number-to-words converter is valid for" do
   describe "Unities" do
     [
       [0, "Zero"],
-      [1, "Um"],
-      [2, "Dois"],
-      [3, "Três"],
-      [4, "Quatro"],
-      [5, "Cinco"],
-      [6, "Seis"],
-      [7, "Sete"],
-      [8, "Oito"],
-      [9, "Nove"]
+      [1, "One"],
+      [2, "Two"],
+      [3, "Three"],
+      [4, "Four"],
+      [5, "Five"],
+      [6, "Six"],
+      [7, "Seven"],
+      [8, "Eight"],
+      [9, "Nine"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -37,32 +37,32 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Tens" do
     [
-      [10, "Dez"],
-      [11, "Onze"],
-      [12, "Doze"],
-      [13, "Treze"],
-      [14, "Catorze"],
-      [15, "Quinze"],
-      [16, "Dezasseis"],
-      [17, "Dezassete"],
-      [18, "Dezoito"],
-      [19, "Dezanove"],
-      [20, "Vinte"],
-      [21, "Vinte e Um"],
-      [30, "Trinta"],
-      [32, "Trinta e Dois"],
-      [40, "Quarenta"],
-      [43, "Quarenta e Três"],
-      [50, "Cinquenta"],
-      [54, "Cinquenta e Quatro"],
-      [60, "Sessenta"],
-      [65, "Sessenta e Cinco"],
-      [70, "Setenta"],
-      [76, "Setenta e Seis"],
-      [80, "Oitenta"],
-      [87, "Oitenta e Sete"],
-      [90, "Noventa"],
-      [98, "Noventa e Oito"]
+      [10, "Ten"],
+      [11, "Eleven"],
+      [12, "Twelve"],
+      [13, "Thirteen"],
+      [14, "Fourteen"],
+      [15, "Fifteen"],
+      [16, "Sixteen"],
+      [17, "Seventeen"],
+      [18, "Eighteen"],
+      [19, "Nineteen"],
+      [20, "Twenty"],
+      [21, "Twenty-one"],
+      [30, "Thirty"],
+      [32, "Thirty-two"],
+      [40, "Forty"],
+      [43, "Forty-three"],
+      [50, "Fifty"],
+      [54, "Fifty-four"],
+      [60, "Sixty"],
+      [65, "Sixty-five"],
+      [70, "Seventy"],
+      [76, "Seventy-six"],
+      [80, "Eighty"],
+      [87, "Eighty-seven"],
+      [90, "Ninety"],
+      [98, "Ninety-eight"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -75,42 +75,42 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Hundred" do
     [
-      [100, "Cem" ],
-      [101, "Cento e Um" ],
-      [111, "Cento e Onze" ],
-      [121, "Cento e Vinte e Um" ],
-      [200, "Duzentos" ],
-      [202, "Duzentos e Dois" ],
-      [212, "Duzentos e Doze" ],
-      [222, "Duzentos e Vinte e Dois" ],
-      [300, "Trezentos" ],
-      [303, "Trezentos e Três" ],
-      [313, "Trezentos e Treze" ],
-      [333, "Trezentos e Trinta e Três" ],
-      [400, "Quatrocentos" ],
-      [404, "Quatrocentos e Quatro" ],
-      [414, "Quatrocentos e Catorze" ],
-      [444, "Quatrocentos e Quarenta e Quatro" ],
-      [500, "Quinhentos" ],
-      [505, "Quinhentos e Cinco" ],
-      [515, "Quinhentos e Quinze" ],
-      [555, "Quinhentos e Cinquenta e Cinco" ],
-      [600, "Seiscentos" ],
-      [606, "Seiscentos e Seis" ],
-      [616, "Seiscentos e Dezasseis" ],
-      [666, "Seiscentos e Sessenta e Seis" ],
-      [700, "Setecentos" ],
-      [707, "Setecentos e Sete" ],
-      [717, "Setecentos e Dezassete" ],
-      [777, "Setecentos e Setenta e Sete" ],
-      [800, "Oitocentos" ],
-      [808, "Oitocentos e Oito" ],
-      [818, "Oitocentos e Dezoito" ],
-      [888, "Oitocentos e Oitenta e Oito" ],
-      [900, "Novecentos" ],
-      [909, "Novecentos e Nove" ],
-      [919, "Novecentos e Dezanove" ],
-      [999, "Novecentos e Noventa e Nove" ]
+      [100, "One Hundred"],
+      [101, "One Hundred and One"],
+      [111, "One Hundred and Eleven"],
+      [121, "One Hundred and Twenty-one"],
+      [200, "Two Hundred"],
+      [202, "Two Hundred and Two"],
+      [212, "Two Hundred and Twelve"],
+      [222, "Two Hundred and Twenty-two"],
+      [300, "Three Hundred"],
+      [303, "Three Hundred and Three"],
+      [313, "Three Hundred and Thirteen"],
+      [333, "Three Hundred and Thirty-three"],
+      [400, "Four Hundred"],
+      [404, "Four Hundred and Four"],
+      [414, "Four Hundred and Fourteen"],
+      [444, "Four Hundred and Forty-four"],
+      [500, "Five Hundred"],
+      [505, "Five Hundred and Five"],
+      [515, "Five Hundred and Fifteen"],
+      [555, "Five Hundred and Fifty-five"],
+      [600, "Six Hundred"],
+      [606, "Six Hundred and Six"],
+      [616, "Six Hundred and Sixteen"],
+      [666, "Six Hundred and Sixty-six"],
+      [700, "Seven Hundred"],
+      [707, "Seven Hundred and Seven"],
+      [717, "Seven Hundred and Seventeen"],
+      [777, "Seven Hundred and Seventy-seven"],
+      [800, "Eight Hundred"],
+      [808, "Eight Hundred and Eight"],
+      [818, "Eight Hundred and Eighteen"],
+      [888, "Eight Hundred and Eighty-eight"],
+      [900, "Nine Hundred"],
+      [909, "Nine Hundred and Nine"],
+      [919, "Nine Hundred and Nineteen"],
+      [999, "Nine Hundred and Ninety-nine"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -123,15 +123,15 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Thousands" do
     [
-      [1000, "Mil"],
-      [1001, "Mil e Um"],
-      [1011, "Mil e Onze"],
-      [1111, "Mil Cento e Onze"],
-      [10000, "Dez Mil"],
-      [10001, "Dez Mil e Um"],
-      [34001, "Trinta e Quatro Mil e Um"],
-      [140000, "Cento e Quarenta Mil"],
-      [140001, "Cento e Quarenta Mil e Um"]
+      [1000, "One Thousand"],
+      [1001, "One Thousand and One"],
+      [1011, "One Thousand and Eleven"],
+      [1111, "One Thousand, One Hundred and Eleven"],
+      [10000, "Ten Thousand"],
+      [10001, "Ten Thousand and One"],
+      [34001, "Thirty-four Thousand and One"],
+      [140000, "One Hundred, Forty Thousand"],
+      [140001, "One Hundred, Forty Thousand and One"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -144,14 +144,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Millions" do
     [
-      [1000000, "Um Milhão"],
-      [1000001, "Um Milhão e Um"],
-      [1000011, "Um Milhão e Onze"],
-      [1000022, "Um Milhão e Vinte e Dois"],
-      [1000122, "Um Milhão Cento e Vinte e Dois"],
-      [2000122, "Dois Milhões Cento e Vinte e Dois"],
-      [20000122, "Vinte Milhões Cento e Vinte e Dois"],
-      [22000122, "Vinte e Dois Milhões Cento e Vinte e Dois"]
+      [1000000, "One Million"],
+      [1000001, "One Million and One"],
+      [1000011, "One Million and Eleven"],
+      [1000022, "One Million and Twenty-two"],
+      [1000122, "One Million, One Hundred and Twenty-two"],
+      [2000122, "Two Million, One Hundred and Twenty-two"],
+      [20000122, "Twenty Million, One Hundred and Twenty-two"],
+      [22000122, "Twenty-two Million, One Hundred and Twenty-two"]
     ].each do |test_set|
       to_convert, expected = explode test_set
       select_scale :long
@@ -165,14 +165,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Thousand Millions" do
     [
-      [1000000000, "Mil Milhões"],
-      [1000000001, "Mil Milhões e Um"],
-      [1000000011, "Mil Milhões e Onze"],
-      [1000000022, "Mil Milhões e Vinte e Dois"],
-      [1000000122, "Mil Milhões Cento e Vinte e Dois"],
-      [2000000122, "Dois Mil Milhões Cento e Vinte e Dois"],
-      [20000000122, "Vinte Mil Milhões Cento e Vinte e Dois"],
-      [22000000122, "Vinte e Dois Mil Milhões Cento e Vinte e Dois"]
+      [1000000000, "One Thousand Million"],
+      [1000000001, "One Thousand Million and One"],
+      [1000000011, "One Thousand Million and Eleven"],
+      [1000000022, "One Thousand Million and Twenty-two"],
+      [1000000122, "One Thousand Million, One Hundred and Twenty-two"],
+      [2000000122, "Two Thousand Million, One Hundred and Twenty-two"],
+      [20000000122, "Twenty Thousand Million, One Hundred and Twenty-two"],
+      [22000000122, "Twenty-two Thousand Million, One Hundred and Twenty-two"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -186,14 +186,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Thousand Millions in short scale (billions)" do
     [
-      [1000000000, "Um Bilião"],
-      [1000000001, "Um Bilião e Um"],
-      [1000000011, "Um Bilião e Onze"],
-      [1000000022, "Um Bilião e Vinte e Dois"],
-      [1000000122, "Um Bilião Cento e Vinte e Dois"],
-      [2000000122, "Dois Biliões Cento e Vinte e Dois"],
-      [20000000122, "Vinte Biliões Cento e Vinte e Dois"],
-      [22000000122, "Vinte e Dois Biliões Cento e Vinte e Dois"]
+      [1000000000, "One Billion"],
+      [1000000001, "One Billion and One"],
+      [1000000011, "One Billion and Eleven"],
+      [1000000022, "One Billion and Twenty-two"],
+      [1000000122, "One Billion, One Hundred and Twenty-two"],
+      [2000000122, "Two Billion, One Hundred and Twenty-two"],
+      [20000000122, "Twenty Billion, One Hundred and Twenty-two"],
+      [22000000122, "Twenty-two Billion, One Hundred and Twenty-two"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -207,14 +207,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Billions" do
     [
-      [1000000000000, "Um Bilião"],
-      [1000000000001, "Um Bilião e Um"],
-      [1000000000011, "Um Bilião e Onze"],
-      [1000000000022, "Um Bilião e Vinte e Dois"],
-      [1000000000122, "Um Bilião Cento e Vinte e Dois"],
-      [2000000000122, "Dois Biliões Cento e Vinte e Dois"],
-      [20000000000122, "Vinte Biliões Cento e Vinte e Dois"],
-      [22000000000122, "Vinte e Dois Biliões Cento e Vinte e Dois"]
+      [1000000000000, "One Billion"],
+      [1000000000001, "One Billion and One"],
+      [1000000000011, "One Billion and Eleven"],
+      [1000000000022, "One Billion and Twenty-two"],
+      [1000000000122, "One Billion, One Hundred and Twenty-two"],
+      [2000000000122, "Two Billion, One Hundred and Twenty-two"],
+      [20000000000122, "Twenty Billion, One Hundred and Twenty-two"],
+      [22000000000122, "Twenty-two Billion, One Hundred and Twenty-two"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -228,14 +228,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Billions in short scale (trillions)" do
     [
-      [1000000000000, "Um Trilião"],
-      [1000000000001, "Um Trilião e Um"],
-      [1000000000011, "Um Trilião e Onze"],
-      [1000000000022, "Um Trilião e Vinte e Dois"],
-      [1000000000122, "Um Trilião Cento e Vinte e Dois"],
-      [2000000000122, "Dois Triliões Cento e Vinte e Dois"],
-      [20000000000122, "Vinte Triliões Cento e Vinte e Dois"],
-      [22000000000122, "Vinte e Dois Triliões Cento e Vinte e Dois"],
+      [1000000000000, "One Trillion"],
+      [1000000000001, "One Trillion and One"],
+      [1000000000011, "One Trillion and Eleven"],
+      [1000000000022, "One Trillion and Twenty-two"],
+      [1000000000122, "One Trillion, One Hundred and Twenty-two"],
+      [2000000000122, "Two Trillion, One Hundred and Twenty-two"],
+      [20000000000122, "Twenty Trillion, One Hundred and Twenty-two"],
+      [22000000000122, "Twenty-two Trillion, One Hundred and Twenty-two"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -249,22 +249,22 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Random integers" do
     [
-      [42, "Quarenta e Dois" ],
-      [102, "Cento e Dois" ],
-      [113, "Cento e Treze" ],
-      [123, "Cento e Vinte e Três" ],
-      [902, "Novecentos e Dois" ],
-      [99, "Noventa e Nove" ],
-      [999, "Novecentos e Noventa e Nove" ],
-      [1000, "Mil" ],
-      [1123, "Mil Cento e Vinte e Três" ],
-      [30000, "Trinta Mil" ],
-      [10123, "Dez Mil Cento e Vinte e Três" ],
-      [21123, "Vinte e Um Mil Cento e Vinte e Três" ],
-      [100000, "Cem Mil" ],
-      [100123, "Cem Mil Cento e Vinte e Três" ],
-      [112123, "Cento e Doze Mil Cento e Vinte e Três" ],
-      [134123, "Cento e Trinta e Quatro Mil Cento e Vinte e Três" ]
+      [42, "Forty-two"],
+      [102, "One Hundred and Two"],
+      [113, "One Hundred and Thirteen"],
+      [123, "One Hundred and Twenty-three"],
+      [902, "Nine Hundred and Two"],
+      [99, "Ninety-nine"],
+      [999, "Nine Hundred and Ninety-nine"],
+      [1000, "One Thousand"],
+      [1123, "One Thousand, One Hundred and Twenty-three"],
+      [30000, "Thirty Thousand"],
+      [10123, "Ten Thousand, One Hundred and Twenty-three"],
+      [21123, "Twenty-one Thousand, One Hundred and Twenty-three"],
+      [100000, "One Hundred Thousand"],
+      [100123, "One Hundred Thousand, One Hundred and Twenty-three"],
+      [112123, "One Hundred, Twelve Thousand, One Hundred and Twenty-three"],
+      [134123, "One Hundred, Thirty-four Thousand, One Hundred and Twenty-three"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 
@@ -278,14 +278,14 @@ describe "EN Number-to-words converter is valid for" do
 
   describe "Random decimals" do
     [
-      [42.2, "Quarenta e Dois vírgula Dois" ],
-      [102.0, "Cento e Dois" ],
-      [103.000, "Cento e Três" ],
-      [113.02, "Cento e Treze vírgula Zero Dois" ],
-      [123.0045, "Cento e Vinte e Três vírgula Zero Zero Quarenta e Cinco" ],
-      [902.982, "Novecentos e Dois vírgula Novecentos e Oitenta e Dois" ],
-      [100000.001, "Cem Mil vírgula Zero Zero Um" ],
-      [100123.100123, "Cem Mil Cento e Vinte e Três vírgula Cem Mil Cento e Vinte e Três" ]
+      [42.2, "Forty-two point Two"],
+      [102.0, "One Hundred and Two"],
+      [103.000, "One Hundred and Three"],
+      [113.02, "One Hundred and Thirteen point Zero Two"],
+      [123.0045, "One Hundred and Twenty-three point Zero Zero Forty-five"],
+      [902.982, "Nine Hundred and Two point Nine Hundred and Eighty-two"],
+      [100000.001, "One Hundred Thousand point Zero Zero One"],
+      [100123.100123, "One Hundred Thousand, One Hundred and Twenty-three point One Hundred Thousand, One Hundred and Twenty-three"]
     ].each do |test_set|
       to_convert, expected = explode test_set
 

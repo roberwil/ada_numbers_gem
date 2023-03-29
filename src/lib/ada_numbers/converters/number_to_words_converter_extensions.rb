@@ -18,7 +18,12 @@ end
 
 class Integer
   def to_words
-    AdaNumbers::NumberToWordsConverter::Pt.convert self
+    case AdaNumbers::Settings.language
+    when AdaNumbers::Settings::Parameters::LANGUAGES[:en]
+      AdaNumbers::NumberToWordsConverter::En.convert self
+    else
+      AdaNumbers::NumberToWordsConverter::Pt.convert self
+    end
   end
 
   def to_w

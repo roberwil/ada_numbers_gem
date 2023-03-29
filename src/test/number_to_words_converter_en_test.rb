@@ -73,7 +73,7 @@ describe "EN Number-to-words converter is valid for" do
     end
   end
 
-  describe "Hundred" do
+  describe "Hundreds" do
     [
       [100, "One Hundred"],
       [101, "One Hundred and One"],

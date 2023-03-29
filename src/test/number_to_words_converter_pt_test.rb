@@ -75,7 +75,7 @@ describe "PT Number-to-words converter is valid for" do
       end
     end
 
-  describe "Hundred" do
+  describe "Hundreds" do
       [
         [100, "Cem" ],
         [101, "Cento e Um" ],

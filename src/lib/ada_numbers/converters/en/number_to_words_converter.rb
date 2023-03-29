@@ -19,6 +19,7 @@ module AdaNumbers
       end
 
       private
+
       def self.convert_integer(number)
         return Message::UNSUPPORTED if number.number_of_digits > Settings::Parameters::DIGITS_LIMIT
 
@@ -101,8 +102,8 @@ module AdaNumbers
       end
 
       def self.unity_or_ten?(number)
-        result = WrittenNumber::En.words_to_number_unities_and_tens_map.resolve(number).nil?
-        result ? number.include?(Separator::En::DASH) : result
+        result = !WrittenNumber::En.words_to_number_unities_and_tens_map.resolve(number).nil?
+        result ? result : number.include?(Separator::En::DASH)
       end
 
       def self.add_separators_to_number(number_tokens)
@@ -112,18 +113,15 @@ module AdaNumbers
           current_token = number_tokens[cursor]
 
           is_hundred = cursor + 1 < number_tokens.size && unity_or_ten?(current_token) &&
-            (number_tokens[cursor + 1]  == WrittenNumber::En::HUNDRED ||
+             (number_tokens[cursor + 1] == WrittenNumber::En::HUNDRED ||
               number_tokens[cursor + 1] == WrittenNumber::En::THOUSAND ||
               number_tokens[cursor + 1] == WrittenNumber::En::MILLION ||
               number_tokens[cursor + 1] == WrittenNumber::En::THOUSAND_MILLION ||
               number_tokens[cursor + 1] == WrittenNumber::En::BILLION ||
               number_tokens[cursor + 1] == WrittenNumber::En::TRILLION)
 
-          add_comma = cursor > 1 &&
-            is_hundred
-
-          no_separator = WrittenNumber::En.numbers_that_ignore_separator.include?(current_token) ||
-            is_hundred
+          add_comma = cursor > 1 && is_hundred
+          no_separator = WrittenNumber::En.numbers_that_ignore_separator.include?(current_token) || is_hundred
 
           if (add_comma)
             result += "#{Separator::En::COMMA} #{current_token}"
@@ -146,8 +144,8 @@ module AdaNumbers
         return result if result != ''
 
         bridge = number.bridge
-        ten    = number.to_s[0...bridge].to_i*10
-        unity  = number.to_s[bridge..-1].to_i
+        ten = number.to_s[0...bridge].to_i * 10
+        unity = number.to_s[bridge..-1].to_i
 
         result = "#{tens(ten)}#{Separator::En::DASH}#{unities(unity).downcase}"
         result

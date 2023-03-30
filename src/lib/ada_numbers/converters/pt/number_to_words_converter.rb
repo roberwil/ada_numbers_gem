@@ -10,8 +10,6 @@ require_relative '../../constants/message'
 module AdaNumbers
   module NumberToWordsConverter
     class Pt
-      LIMIT = 15
-
       @@use_short_scale = false
       @@number_tokens   = []
 
@@ -22,7 +20,7 @@ module AdaNumbers
 
       private
       def self.convert_integer(number)
-        return Message::UNSUPPORTED if number.number_of_digits > LIMIT
+        return Message::UNSUPPORTED if number.number_of_digits > Settings::Parameters::DIGITS_LIMIT
 
         select_scale
         @@number_tokens.clear
@@ -37,7 +35,7 @@ module AdaNumbers
         str_integer_part = str_number.first
         str_decimal_part = str_number.size == 1? "0" : str_number.last
 
-        return Message::UNSUPPORTED if str_integer_part.size > LIMIT || str_decimal_part.size > LIMIT
+        return Message::UNSUPPORTED if str_integer_part.size > Settings::Parameters::DIGITS_LIMIT || str_decimal_part.size > Settings::Parameters::DIGITS_LIMIT
 
         whole_part   = str_integer_part.to_i
         decimal_part = str_decimal_part.to_i

@@ -13,20 +13,22 @@ module AdaNumbers
         long:  :long
       }
 
+      DIGITS_LIMIT = 15
+
       @hello = "hi"
       class << self
         attr_accessor :hello
       end
     end
 
-    @language = Parameters::LANGUAGES[:en]
+    @language = Parameters::LANGUAGES[:pt]
     @scale    = Parameters::SCALES[:long]
 
     class << self
       attr_accessor :language, :scale
 
       def reset
-        @language = Parameters::LANGUAGES[:en]
+        @language = Parameters::LANGUAGES[:pt]
         @scale    = Parameters::SCALES[:long]
       end
     end

@@ -1,15 +1,20 @@
 require "test_helper"
 
-class WordsToNumberConverterPtTest < Minitest::Test
-  def self.select_scale(scale)
-    AdaNumbers::Settings.scale = AdaNumbers::Settings::Parameters::SCALES[scale]
+def select_scale(scale)
+  AdaNumbers::Settings.scale = AdaNumbers::Settings::Parameters::SCALES[scale]
+end
+
+def explode(set)
+  return set.last, set.first
+end
+
+describe "PT Words-to-number converter is valid for" do
+
+  before do
+    AdaNumbers::Settings.language = AdaNumbers::Settings::Parameters::LANGUAGES[:pt]
   end
 
-  def self.explode(set)
-    return set.last, set.first
-  end
-
-  describe "To number - Unities are valid" do
+  describe "Unities" do
     [
       [0, "Zero"],
       [1, "Um"],
@@ -22,7 +27,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [8, "Oito"],
       [9, "Nove"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -31,7 +36,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Tens are valid" do
+  describe "Tens" do
     [
       [10, "Dez"],
       [11, "Onze"],
@@ -60,7 +65,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [90, "Noventa"],
       [98, "Noventa e Oito"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -69,7 +74,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Hundred are valid" do
+  describe "Hundreds" do
     [
       [100, "Cem" ],
       [101, "Cento e Um" ],
@@ -108,7 +113,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [919, "Novecentos e Dezanove" ],
       [999, "Novecentos e Noventa e Nove" ]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -117,7 +122,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Thousands are valid" do
+  describe "Thousands" do
     [
       [1000, "Mil"],
       [1001, "Mil e Um"],
@@ -129,7 +134,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [140000, "Cento e Quarenta Mil"],
       [140001, "Cento e Quarenta Mil e Um"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -138,7 +143,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Millions are valid" do
+  describe "Millions" do
     [
       [1000000, "Um Milhão"],
       [1000001, "Um Milhão e Um"],
@@ -149,8 +154,8 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [20000122, "Vinte Milhões Cento e Vinte e Dois"],
       [22000122, "Vinte e Dois Milhões Cento e Vinte e Dois"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
-      WordsToNumberConverterPtTest.select_scale :long
+      to_convert, expected = explode test_set
+      select_scale :long
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -159,7 +164,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Thousand Millions are valid" do
+  describe "Thousand Millions" do
     [
       [1000000000, "Mil Milhões"],
       [1000000001, "Mil Milhões e Um"],
@@ -170,17 +175,17 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [20000000122, "Vinte Mil Milhões Cento e Vinte e Dois"],
       [22000000122, "Vinte e Dois Mil Milhões Cento e Vinte e Dois"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
-        WordsToNumberConverterPtTest.select_scale :long
+        select_scale :long
         actual = to_convert.to_n
         assert_equal expected, actual
       end
     end
   end
 
-  describe "To number - Thousand Millions in short scale (billions) are valid" do
+  describe "Thousand Millions in short scale (billions)" do
     [
       [1000000000, "Um Bilião"],
       [1000000001, "Um Bilião e Um"],
@@ -191,17 +196,17 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [20000000122, "Vinte Biliões Cento e Vinte e Dois"],
       [22000000122, "Vinte e Dois Biliões Cento e Vinte e Dois"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
-        WordsToNumberConverterPtTest.select_scale :short
+        select_scale :short
         actual = to_convert.to_n
         assert_equal expected, actual
       end
     end
   end
 
-  describe "To number - Billions are valid" do
+  describe "Billions" do
     [
       [1000000000000, "Um Bilião"],
       [1000000000001, "Um Bilião e Um"],
@@ -212,17 +217,17 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [20000000000122, "Vinte Biliões Cento e Vinte e Dois"],
       [22000000000122, "Vinte e Dois Biliões Cento e Vinte e Dois"]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
-        WordsToNumberConverterPtTest.select_scale :long
+        select_scale :long
         actual = to_convert.to_n
         assert_equal expected, actual
       end
     end
   end
 
-  describe "To number - Billions in short scale (trillions) are valid" do
+  describe "Billions in short scale (trillions)" do
     [
       [1000000000000, "Um Trilião"],
       [1000000000001, "Um Trilião e Um"],
@@ -233,17 +238,17 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [20000000000122, "Vinte Triliões Cento e Vinte e Dois"],
       [22000000000122, "Vinte e Dois Triliões Cento e Vinte e Dois"],
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
-        WordsToNumberConverterPtTest.select_scale :short
+        select_scale :short
         actual = to_convert.to_n
         assert_equal expected, actual
       end
     end
   end
 
-  describe "To number - Random integers are valid" do
+  describe "Random integers" do
     [
       [42, "Quarenta e Dois" ],
       [102, "Cento e Dois" ],
@@ -262,7 +267,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [112123, "Cento e Doze Mil Cento e Vinte e Três" ],
       [134123, "Cento e Trinta e Quatro Mil Cento e Vinte e Três" ]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n
@@ -271,7 +276,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
     end
   end
 
-  describe "To number - Random decimals are valid" do
+  describe "Random decimals" do
     [
       [42.2, "Quarenta e Dois vírgula Dois" ],
       [102.0, "Cento e Dois" ],
@@ -282,7 +287,7 @@ class WordsToNumberConverterPtTest < Minitest::Test
       [100000.001, "Cem Mil vírgula Zero Zero Um" ],
       [100123.100123, "Cem Mil Cento e Vinte e Três vírgula Cem Mil Cento e Vinte e Três" ]
     ].each do |test_set|
-      to_convert, expected = WordsToNumberConverterPtTest.explode test_set
+      to_convert, expected = explode test_set
 
       it "#{to_convert} should be '#{expected}'" do
         actual = to_convert.to_n

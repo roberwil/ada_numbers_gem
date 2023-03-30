@@ -32,8 +32,9 @@ Or install it yourself as:
 
 
 To use every feature, simply
-
-	require 'ada_numbers'
+```ruby
+require 'ada_numbers'
+```
 
 Converters support 2 global parameters:
 

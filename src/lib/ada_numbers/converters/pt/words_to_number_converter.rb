@@ -1,5 +1,6 @@
 require_relative '../../utilities/integer_extensions'
 require_relative '../../utilities/hash_extensions'
+require_relative '../../utilities/string_extensions'
 require_relative '../../utilities/settings'
 require_relative '../../utilities/number_category'
 
@@ -15,8 +16,7 @@ module AdaNumbers
       def self.convert(word)
         select_scale
 
-        word = word.gsub(/\s+/, ' ').strip
-        word = titlecase word
+        word = word.gsub(/\s+/, ' ').strip.title_case
 
         words_to_convert = word.split " #{Separator::Pt::DECIMAL_SEPARATOR} "
         words_to_convert = word.split " #{Separator::Pt::DECIMAL_SEPARATOR_ALTERNATIVE} " if words_to_convert.size == 1
@@ -42,10 +42,6 @@ module AdaNumbers
       end
 
       private
-      def self.titlecase(word)
-        word.split(' ').map {|w| w.capitalize }.join ' '
-      end
-
       def self.resolve_word(word, use_short_scale = false)
         word = word.gsub /\s+/, ' '
 

@@ -9,6 +9,7 @@ def explode(set)
 end
 
 describe "EN Number-to-words converter is valid for" do
+
   before do
     AdaNumbers::Settings.language = AdaNumbers::Settings::Parameters::LANGUAGES[:en]
   end

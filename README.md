@@ -1,6 +1,14 @@
 # Ada Numbers
 
-Same as Ada.Numbers, but for Ruby folks :D
+Same as [Ada.Numbers](https://github.com/roberwil/ada_numbers), but for Ruby folks :D
+
+- It converts a number to its equivalent in written words, i.e. 123 to "cento e vinte três" or 123 to
+  "one hundred and twenty-three" depending on the chosen language;
+- It converts a word to its equivalent in number, i.e. "cento e vinte dois" to "122" or "one hundred and twenty-two"
+  to "122".
+
+**Note: `ada_numbers` supports numbers with a maximum of 15 digits.**
+
 
 ## Installation
 
@@ -21,18 +29,11 @@ Or install it yourself as:
 ## Usage
 
 ## Features:
-- It converts a number to its equivalent in written words, i.e. 123 to "cento e vinte três" or 123 to
-  "one hundred and twenty-three" depending on the chosen language;
-- It converts a word to its equivalent in number, i.e. "cento e vinte dois" to "122" or "one hundred and twenty-two"
-  to "122".
 
-**Note: `ada.numbers` supports numbers with a maximum of 15 digits.**
-
-### Specification
 
 To use every feature, simply
 
-	requeire 'ada_numbers'
+	require 'ada_numbers'
 
 Converters support 2 global parameters:
 
@@ -78,7 +79,7 @@ number.to_n # > 22
 
 AdaNumbers::Settings.language = AdaNumbers::Settings::Parameters::LANGUAGES[:en] # converters will now use english
 number = "twenty-two"
-number.to_n #> "22"
+number.to_n # > "22"
 ```
 
 To convert **number to words**, use `.to_w` or `.to_words` or using the class methods directly (less recommended):
@@ -94,7 +95,7 @@ number.to_w # > "Vinte e Dois"
 
 AdaNumbers::Settings.language = AdaNumbers::Settings::Parameters::LANGUAGES[:en] # converters will now use english
 number = 22;
-number.to_w #> "Twenty-two"
+number.to_w # > "Twenty-two"
 ```
 
 If, for some reason, whichever object your trie to convert is invalid for the converters,
@@ -106,17 +107,15 @@ Some utilities are also available, such as:
 
 ```ruby
 number = 22;
-number.number_of_digits #> 2
+number.number_of_digits # > 2
 ```
 
 - `.category` to know the category of the number.
 
 ```ruby
 number = 22;
-number.category #> NumberCategory::Ten
+number.category # > NumberCategory::Ten
 ```
-
-`NumberCategory` is an enum, check its documentation for more details.
 
 ## Development
 

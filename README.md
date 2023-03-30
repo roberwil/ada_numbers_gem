@@ -107,7 +107,7 @@ Some utilities are also available, such as:
 
 ```ruby
 number = 22;
-number.number_of_digits # > 2
+number.n_digits # > 2
 ```
 
 - `.category` to know the category of the number.

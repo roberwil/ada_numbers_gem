@@ -15,7 +15,6 @@ module AdaNumbers
 
       DIGITS_LIMIT = 15
 
-      @hello = "hi"
       class << self
         attr_accessor :hello
       end

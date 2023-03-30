@@ -119,7 +119,8 @@ module AdaNumbers
       end
 
       def self.compute_multiplier?(token, number_of_numeric_tokes)
-        (token == WrittenNumber::En::HUNDRED ||
+         (token == WrittenNumber::En::HUNDRED ||
+          token == WrittenNumber::En::THOUSAND ||
           token == WrittenNumber::En::MILLION ||
           token == WrittenNumber::En::BILLION ||
           token == WrittenNumber::En::TRILLION) &&
